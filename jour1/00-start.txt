@@ -1,0 +1,148 @@
+créer un nouveau dossier => sql
+dans ce dossier vous allez créer un sous dossier jour1
+----------------------
+malik.h@webdevpro.net
+SQL 
+----------------------
+SUPPORT :
+https://formation.webdevpro.net/sql/
+login : sql 
+password : sql 
+----------------------
+lancer Visual Studio Code 
+=> toutes les notes de cours => github (ouvert dans peu de temps)
+
+=> dans PHP et Javascript
+=> créer des variables 
+$premier = 10 ; // créer une variable en php 
+const premier = 10 ; // créer une variable en javascript 
+
+=> dès que l'on veut résoudre un problème (complexe)
+=> vous allez avoir besoin d'une grande QUANTITE de valeurs ===> grande QUANTITE de variables 
+
+=> en PHP variable qui permettent de stocker des grosses valeurs 
+
+=> tableau (PHP)
+
+$etudiants = [ 
+    [ "id" => 1 , "nom" => "Alain", "age" => 22 , "admin" => true ],
+    [ "id" => 2 , "nom" => "Béatrice", "age" => 15 , "admin" => false ],
+    [ "id" => 3 , "nom" => "Céline", "age" => 12 , "admin" => true ],
+];
+
+
+=> en Javascript JSON 
+
+const etudiants = [
+    { "id" : 1 , "nom" : "Alain", "age" : "fkzl,uijh" , "admin" : true },
+    { "id" : 2 , "nom" : "Béatrice", "age" : 15 , "admin" : false },
+    { "id" : 3 , "nom" : "Céline", "age" : 12 , "admin" : true }
+];
+
+// tableau qui contient des tableaux qui contiennent 60 valeurs 
+// vous avez 200 étudiants 
+
+// variable énorme à écrire => fichier qui contient  2000 lignes 
+
+
+=> énorme risque de faire une coquille lors de l'écriture de la variable => erreur fatal 
+stop éxecution du code 
+=> supplice pour la maintenance / évolution de cette variable 
+
+=> tableau (limite)
+=> Absence de sécurité => toutes les informations sont en clairs
+=> pas possible de dire certaines informations sont présents dans le tableau MAIS 
+=> accessible uniquement si on s'est identifié 
+
+
+=> dès les années 60 (avec l'informatique que se crée)
+
+
+=> COMMENT stocker et manipuler une grande quantité de données de manière FIABLE ????
+
+=> les figures de l'ombre (film)
+
+=> dans la solution => IBM et + En 1970 Edgar Frank Codd (ingénieur - mathématiques des ensembles) 
+
+Base de données logiciel 
+
+deux parties :
+=> données les informations (le gros tableau)
+=> SGBD => Système de Gestion de Base de Données (logiciel / programme)
+
+1 développeur (programme PHP / JS ...) ====> SGBD ====> traitement sur 
+                                                      données les informations
+
+2 le développeur délègue au SGBD tous les traitements sur ses données 
+    traitements => AJOUTER 
+                => modifier une information
+                => supprimer une information
+                => récupérer une information
+                => rechercher une information
+                => effectuer une relation entre plusieurs informations
+                => ..... 
+                => sécuriser des informations 
+
+3 pour communiquer avec le SGBD, le développeur doit utiliser une langage informatique 
+pour expliquer au SGBD ce qu'il veut 
+
+=> SQL Structured Query Langage => 
+
+=> une grand quantité de Base de Données ??? 
+MySQL 
+Access 
+Base 
+
+=> base de données avec licence (payante)
+=> base de données sans licence (gratuite)
+
+=> installé XAMPP => Apache MariaDB et PHP et Perl 
+
+=> en fonction du SGBD que vous utilisez ATTENTION le SQL n'est pas exactement le même 
+=> certains mot clés de SQL ne sont pas présents dans certains SGBD 
+=> norme => défini une liste de mot clé commun sur tous les SGBD 
+=> certains mot clé n'existe pas sur certains SGBD // certains mots clé n'ont pas le même sens sur certains SGBD 
+
+=> ORM Object Relation Mapper (Doctrine)
+
+=> apprendre SQL (écrire du SQL ) =>
+=> deux premiers jours => SQLITE 
+=> dernier jour => MariaDB 
+
+=> historique MariaDB (XAMPP) !== ??? MySQL 
+
+
+=> installation => 
+
+=> Extension Visual Studio 2....
+=> Explorateur > dans le dossier jour1 > créer un fichier demo.db 
+=> l'extension est importante 
+
+=> le SQL dans 15 min !!!!!! 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
