@@ -68,7 +68,46 @@ SELECT * FROM fleur ;
 
 -- remplir la table avec des datas (=> peupler la table) avec 4 lignes suivantes :
 
+CREATE TABLE exo4  (
+    id INTEGER PRIMARY KEY AUTOINCREMENT ,
+    nom VARCHAR(60) DEFAULT "titre document" ,
+    nb_like INT DEFAULT 0 ,
+    auteur VARCHAR(30) DEFAULT "Victor Hugo"
+);
+
+INSERT INTO exo4
+(nom , nb_like , auteur)
+VALUES 
+("Les Misérables" ,  50000 , "Victor Hugo"),
+("La Mare au diable"  , 100000 , "George Sand"),
+("Notre Dame" ,  4000, "Victor Hugo"),
+("encours écriture" ,  0 , "inconnu");
+
+SELECT * FROM exo4 ;
+
+-- utiliser les default des colonnes du tableau
+INSERT INTO exo4
+(nom , nb_like )
+VALUES 
+("Les Misérables" ,  50000 ),
+("Notre Dame" ,  4000);
+
+INSERT INTO exo4
+(nom  , auteur)
+VALUES 
+("encours écriture" , "inconnu");
+
+INSERT INTO exo4
+(nom , nb_like , auteur)
+VALUES 
+("La Mare au diable"  , 100000 , "George Sand");
+
+
 "Les Misérables"   50000  "Victor Hugo"
 "La Mare au diable"   100000  "George Sand"
 "Notre Dame"   4000  "Victor Hugo"
 "encours écriture"   0  "inconnu"
+
+
+// https://github.com/webdevproformation/
+// https://github.com/webdevproformation/sql-d-nov2022
