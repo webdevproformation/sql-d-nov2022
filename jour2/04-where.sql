@@ -52,3 +52,15 @@ WHERE dt_creation >= "2022-01-01" AND dt_creation <= "2022-09-01" ;
 SELECT *
 FROM articles
 WHERE dt_creation BETWEEN "2022-01-01" AND "2022-09-01" ;
+
+-- cas pratique 
+-- récupérer tous les articles dont le titre contient la lettre "o" ET publié entre le 1er novembre 2022 et 2 novembre 2022 ET dont la durée est > à 6 
+
+SELECT * FROM articles
+
+SELECT *
+FROM articles
+WHERE titre LIKE "%o%" AND 
+      (dt_creation BETWEEN "2022-11-01 00:00:00" AND "2022-11-02 23:59:59") AND 
+      duree > 6  ;
+
