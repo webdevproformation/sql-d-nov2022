@@ -83,3 +83,30 @@ FROM articles ;
 -- contenu de l'article
 -- nombre de caractères du contenu de l'article 
 -- si la valeur publié = 1 => publié sinon afficher non publié 
+
+SELECT 
+    auteur AS `nom auteur` , 
+    contenu AS `contenu de l'article` , 
+    LENGTH(contenu) AS `nb caractères article` , 
+    (CASE publie WHEN 1 THEN "publié" ELSE "non publié" END) AS `status`
+FROM articles ;
+
+// if( publie == 1 ){
+//   "publie"
+// } else {
+//    "non publié"
+// }
+
+switch publie 
+    case 1 : "publie" ; break ;
+    else :  "non publié"
+
+SELECT * FROM articles 
+"function calcul(){
+    return 10 + 2
+}"
+
+eval() // js 
+exec()  // PHP 
+
+
