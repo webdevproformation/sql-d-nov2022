@@ -66,3 +66,19 @@ SET col1 = "Bernard"
 WHERE id = 1 ;
 
 -- attention ne pas oublier la clause WHERE (la partie de WHERE de la requête SQL )
+
+cas pratique dans le dossier jour2 
+créer une nouvelle base de données "blog.db"
+
+créer une table articles avec 7 colonnes 
+clé primaire
+titre texte avec un maximum de 250 lettres 
+contenu texte qui peut contenir maximum 65 000
+duree chiffre entier maximum de 200
+auteur texte avec un maximum de 250 lettres par défaut "la Fontaine"
+dt_creation date et heure et par défaut c'est maintenant (instant enregistrement )
+publie vrai / faux 
+
+
+
+
