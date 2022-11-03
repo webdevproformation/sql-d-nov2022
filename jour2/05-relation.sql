@@ -44,6 +44,49 @@ CREATE TABLE post (
 -- url texte maximum de 65000
 -- description  texte maximum de 65000
 -- id_produit clé secondaire (clé étrangère = Foreign key )
+DROP TABLE produit ;
+CREATE TABLE produit(
+    id INTEGER PRIMARY KEY AUTOINCREMENT ,
+    nom VARCHAR(255) ,
+    prix FLOAT ,
+    dt_creation DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE image(
+    id INTEGER PRIMARY KEY AUTOINCREMENT , 
+    url TEXT ,
+    description TEXT ,
+    id_produit INTEGER ,
+    FOREIGN KEY (id_produit) REFERENCES produit(id)
+);
+
+-- spécial SQLITE 
+
+
+INSERT INTO produit 
+( nom , prix )
+VALUES 
+( "PlayStation5" , 520.10 ),
+( "Nintendo Switch" , 520.10 );
+
+DELETE FROM produit WHERE id >= 3
+
+PRAGMA foreign_keys = ON;
+
+INSERT INTO image 
+( url , description , id_produit )
+VALUES
+( "image.png" , "lorem ipsum" , 5 );
+
+
+PRAGMA foreign_keys = ON;
+
+INSERT INTO image 
+( url , description , id_produit )
+VALUES
+( "image.png" , "lorem ipsum" , 2 );
+
+-- pour la colonne id_produit => elle ne peut prendre QUE des valeurs existantes dans la colonne id de la table produit 
 
 créer ces deux tables dans la base blog.db 
 
