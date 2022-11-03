@@ -33,13 +33,42 @@ author
  "Victor Hugo"  "Ecrivain"
  "George Sand"  "Ecrivain"
 
+INSERT INTO author 
+( nom , role )
+VALUES 
+("La Fontaine" , "Philosophe"),
+("Victor Hugo",  "Ecrivain"),
+("Victor Hugo" , "Ecrivain");
+
+DELETE FROM author WHERE id = 3 ;
+
+INSERT INTO author 
+( nom , role )
+VALUES 
+("George Sand" , "Ecrivain");
+
+
 post 
 "Les Misérables" 1800-01-01   => associé à Victor Hugo
 "Notre Dame" 1800-02-01   => associé à Victor Hugo
 "la Mare au Diable" 1800-02-01   => associé à George Sand
 "Les Fables de la Fontaine" 1800-02-01   => associé à La Fontaine
 
+PRAGMA foreign_keys = ON;
+
+INSERT INTO post 
+( titre, dt_creation , id_auteur )
+VALUES 
+("Les Misérables" , "1800-01-01" , 2),
+("Notre Dame", "1800-02-01" , 2),
+("la Mare au Diable" , "1800-02-01" , 4 ),
+("Les Fables de la Fontaine" , "1800-02-01" , 1);
 
 => réaliser une requête SELECT 
 
 nom auteur / nom du livre / dt publication du livre 
+
+SELECT nom , titre , dt_creation 
+FROM post 
+JOIN author 
+ON post.id_auteur = author.id ;
