@@ -72,3 +72,29 @@ SELECT nom , titre , dt_creation
 FROM post 
 JOIN author 
 ON post.id_auteur = author.id ;
+
+créer une table catégorie 
+clé primaire
+nom 
+
+Orientale
+Méditerranéenne
+
+créer une table recette 
+clé primaire
+nom 
+prix
+id_categorie
+id_author 
+
+"frite"                 5   associé à catégorie Méditerranéenne et l'auteur La Fontaine
+"blanquette de veau"   15   associé à catégorie Orientale et l'auteur George Sand 
+
+=> réaliser une requête dans laquelle vous allez afficher
+nom recette / nom catégorie / prix recette / nom de l'auteur 
+
+
+
+
+
+
