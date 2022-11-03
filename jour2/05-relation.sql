@@ -91,10 +91,6 @@ VALUES
 créer ces deux tables dans la base blog.db 
 
 
-
-
-
-
 1 "Alain"  "Administrateur"
 2 "Benjamin" "Rédacteur"
 
