@@ -64,3 +64,5 @@ WHERE titre LIKE "%o%" AND
       (dt_creation BETWEEN "2022-11-01 00:00:00" AND "2022-11-02 23:59:59") AND 
       duree > 6  ;
 
+plusieurs boucle for ET if 
+
