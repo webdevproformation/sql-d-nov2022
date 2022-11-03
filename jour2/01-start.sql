@@ -20,3 +20,10 @@ CREATE TABLE articles (
     dt_creation DATETIME DEFAULT CURRENT_TIMESTAMP ,
     publie BOOLEAN
 );
+
+-- peupler la table articles avec des valeurs suivantes : 
+
+"article 1" "lorem ipsum" 20 "la Fontaine" maintenant true 
+"article 2" "lorem ipsum sed" 15 "la Fontaine" hier à 12h00 false  
+"article 3" "lorem ipsum dolor" 5 "Victor Hugo" maintenant false  
+"article 4" "lorem ipsum" 30 "Victor Hugo" "1er Avril 2022 à 10h00" true  
