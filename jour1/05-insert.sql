@@ -67,7 +67,7 @@ SELECT * FROM fleur ;
 -- auteur text nom maximum de 30 lettres par défaut "Victor Hugo"
 
 -- remplir la table avec des datas (=> peupler la table) avec 4 lignes suivantes :
-
+DROP TABLE exo4 ;
 CREATE TABLE exo4  (
     id INTEGER PRIMARY KEY AUTOINCREMENT ,
     nom VARCHAR(60) DEFAULT "titre document" ,

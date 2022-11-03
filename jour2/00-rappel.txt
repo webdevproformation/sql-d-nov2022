@@ -1,0 +1,68 @@
+trucs ???? 
+
+programme informatique => valeurs 
+stocker dans des variables 
+
+peu de valeurs => peu de variables 
+mais si on a BEAUCOUP de valeurs => complexe de les stocker facilement sans risque d'erreur / facile à maintenir 
+
+=> problème qui a été vue dès les années 60 
+
+developpeur => code => appeler logiciel / demande / requête (SGBD) => réaliser des traitements sur les données 
+
+SQL est le langage à utiliser pour faire des demandes au SGBD 
+
+SGBD (Sqlite)
+- facile à installer
+- en local
+- très utilisé dans le monde des logiciels sur smartphone
+- force à écrire du SQL directement 
+
+Base de données (boite qui contient tout)
+Table sous dossier stocker les concepts
+Colonnes type d'information que vous voulez stocker 
+Data (ligne de données) => dataset / jeu de données / tuples / ligne dans le tableau
+
+=> SQLITE créer une base de données => créer un fichier .db .sqlite .sqlite3
+
+=> créer des tables 
+CREATE TABLE nom_table( -- créer une table et ses colonnes
+    -- schema de la table
+    id INTEGER PRIMARY KEY AUTOINCREMENT , 
+    -- clé primaire => colonne qui permet de facilement réaliser des traitements 
+    nom VARCHAR(255) , -- TEXT MEDIUMTEXT BIGTEXT BLOB 
+    age TINYINT SMALLINT MEDIUMINT INT BIGINT ,
+    prix FLOAT DOUBLE DECIMAL ,
+    verif BOOLEAN ,
+    dt_jour DATE ,
+    dt_heure TIME ,
+    dt_naissance DATETIME DEFAULT "2022-11-03"
+);
+
+DROP TABLE nom_table ; -- supprimer une table 
+
+ALTER TABLE nom_table [MODIFY ADD ....]  prix TEXT ; -- modifier une table existante
+
+[SHOW EXPLAIN] TABLE nom_table ;
+
+CRUD => initiales 
+Create
+Read 
+Update
+Delete 
+
+INSERT INTO nom_table
+( col1 , col2 , col3 )
+VALUES 
+(  "Alain" , 22 , "2022-11-03"  )
+
+-- si vous ne précisez pas la colonne dans la 1ère paire de parenthèse qui a une propriété DEFAULT => SGBD va remplir la colonne avec la valeur par défaut dans la définition de la colonne
+-- très intéressant sur les dates 
+
+TABLE comment le créer 
+
+UPDATE nom_table 
+SET col1 = "Bernard" 
+WHERE id = 1 ;
+
+-- attention ne pas oublier la clause WHERE (la partie de WHERE de la requête SQL )
