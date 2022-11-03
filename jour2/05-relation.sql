@@ -32,6 +32,24 @@ CREATE TABLE post (
     FOREIGN KEY (id_auteur) REFERENCES author(id)
 );
 
+-- créer deux tables 
+-- produit 
+-- clé primaire
+-- nom  texte max de 255
+-- prix  chiffre à virgule
+-- dt_creation maintenant par défaut
+
+-- image 
+-- clé primaire
+-- url texte maximum de 65000
+-- description  texte maximum de 65000
+-- id_produit clé secondaire (clé étrangère = Foreign key )
+
+créer ces deux tables dans la base blog.db 
+
+
+
+
 
 
 1 "Alain"  "Administrateur"
