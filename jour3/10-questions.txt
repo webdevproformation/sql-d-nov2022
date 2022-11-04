@@ -46,3 +46,28 @@ JOIN client
 ON client.id = reservation.id_client ;
 
 
+3 afficher la liste de toutes les réservations réalisées sur des salles de réunion dont la capacite est > 20
+nom salle / capacite de la salle / id réservation / dt_debut / dt_fin 
+
+SELECT salle.nom , salle.capacite , reservation.id , reservation.dt_arrivee , reservation.dt_depart
+FROM salle
+JOIN reservation
+ON reservation.id_salle = salle.id 
+WHERE salle.capacite > 20 ;
+
+
+4 afficher l'ensemble des clients qui ont réserver des salles de réunion sur Paris 
+nom client / id réservation / dt_debut / dt_fin / nom de la salle 
+
+SELECT 
+    client.nom ,  
+    reservation.id  AS `id réservation` ,
+    reservation.dt_arrivee , 
+    reservation.dt_depart , 
+    salle.nom AS `nom salle`
+FROM salle
+JOIN reservation
+ON reservation.id_salle = salle.id 
+JOIN client
+ON reservation.id_client = client.id 
+
