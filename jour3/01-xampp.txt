@@ -97,3 +97,41 @@ SHOW CREATE TABLE `demo`.`reservation`
 --------------------
 --------------------
 --------------------
+
+
+ajouter une ligne dans la table user 
+
+INSERT INTO `demo`.`user` 
+(nom , dt_creation , is_admin , prix_abonnement)
+VALUES 
+( "Alain" , "2022-11-04" , TRUE , 120.05 ),
+( "Bernard" , "2022-11-04" , FALSE , 20.50 ) ;
+
+
+
+
+SELECT * FROM user ;
+
+
+modifier le nom de l'utilisateur qui s'appelle Alain => Zorro
+
+UPDATE `demo`.`user` SET nom = "Zorro" WHERE nom = "Alain" ; 
+
+
+
+supprimer la ligne de Alain 
+
+DELETE FROM `demo`.`user` WHERE nom = "Alain" ;
+
+
+
+-------------------
+
+créer une relation entre la table reservation et la table user 
+
+=> ajouter une nouvelle colonne sur la table réservation 
+user_id  => INT (11)
+
+Attention cette colonne doit êt du même type que la clé primaire de la table user 
+
+-------------------

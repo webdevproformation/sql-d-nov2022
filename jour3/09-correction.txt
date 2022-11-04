@@ -1,0 +1,38 @@
+DROP DATABASE IF EXISTS exo1;
+CREATE DATABASE exo1 COLLATE utf8mb4_general_ci ;
+
+CREATE TABLE exo1.ville (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(200)
+) ENGINE=InnoDB;
+
+CREATE TABLE exo1.client (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(200) ,
+    email VARCHAR(200) ,
+    mdp VARCHAR(200) ,
+    status BOOLEAN ,
+    dt_creation  DATETIME DEFAULT CURRENT_TIMESTAMP 
+) ENGINE=InnoDB ;
+
+CREATE TABLE exo1.salle(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(200) ,
+    description TEXT ,
+    url    VARCHAR(200) ,
+    catagorie VARCHAR(200) ,
+    capacite TINYINT UNSIGNED ,
+    id_ville INT ,
+    FOREIGN KEY (id_ville) REFERENCES ville(id)
+) ENGINE=InnoDB ;
+
+CREATE TABLE exo1.reservation(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_salle INT ,
+    id_client INT ,
+    dt_arrivee  DATETIME ,
+    dt_fin  DATETIME ,
+    prix FLOAT(8,2),
+    FOREIGN KEY (id_salle) REFERENCES salle(id),
+    FOREIGN KEY (id_client) REFERENCES client(id)
+)  ENGINE=InnoDB ;
