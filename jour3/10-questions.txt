@@ -3,6 +3,46 @@ dans la base demo
 1 afficher la liste de toutes les salles de réunion qui sont basées à Paris
 nom salle // capacité de la salle // nom de la ville 
 
-2 afficher la liste de tous les clients qui ont réalisé une réservations
+SELECT salle.nom , salle.capacite , ville.nom 
+FROM salle
+JOIN ville
+ON salle.id_ville = ville.id 
+
+--------------------
+
+SELECT salle.nom , salle.capacite , ville.nom 
+FROM salle
+JOIN ville
+ON salle.id_ville = ville.id 
+WHERE ville.nom = "PARIS"
+
+
+SELECT salle.nom , salle.capacite , ville.nom 
+FROM salle
+JOIN ville
+ON salle.id_ville = ville.id 
+WHERE ville.nom LIKE "paris"
+
+-----------------
+
+2 afficher la liste de tous les clients qui ont réalisé une réservation
 nom client / email client / id reservation / dt_debut / dt_fin 
+
+
+SELECT client.nom , client.email , reservation.id , reservation.dt_arrivee , reservation.dt_depart
+FROM reservation
+JOIN client 
+ON client.id = reservation.id_client ;
+
+
+SELECT 
+    client.nom , 
+    client.email , 
+    reservation.id AS `id resa` , 
+    reservation.dt_arrivee AS `dt début`, 
+    reservation.dt_depart AS `dt fin`
+FROM reservation
+JOIN client 
+ON client.id = reservation.id_client ;
+
 
