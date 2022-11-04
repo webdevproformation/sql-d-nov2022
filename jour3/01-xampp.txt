@@ -1,0 +1,44 @@
+XAMPP 
+X Cross 
+A Apache
+M MariaDB 
+P PHP 
+P Perl 
+
+en + => phpMyAdmin (site internet)
+qui va permettre de gèrer vos bases de données 
+
+=> SQL (saisir des requêtes SQL )
+=> formulaire  / menu => gérer requêtes SQL => exécuter 
+
+start MariaDB et Apache
+
+=> http://localhost/phpmyadmin/
+
+
+mySQL / MariaDB => créer une base de données 
+
+-- créer une base 
+CREATE DATABASE demo COLLATE utf8mb4_general_ci;
+
+-- supprimer une base
+DROP DATABASE demo ;
+
+-----
+
+Créer des tables 
+USE demo ;
+CREATE TABLE `user`(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(100),
+    dt_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
+    is_admin BOOLEAN ,
+    prix_abonnement FLOAT(8,2)
+) ENGINE = InnoDB;
+
+chiffre qui contient 8 caractères dont 2 chiffres sous la virgule
+
+InnoDB; => moteur de base de données xxxxx relation entre table
+le moteur par défaut lorsque l'on crée une base de données 
+
+MyIsam  => moteur de base de données ne permet pas de faire des relations entre les tables mais rapide pour rechercher 

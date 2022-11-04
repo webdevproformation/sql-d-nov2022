@@ -1,0 +1,104 @@
+
+Opération sur le contenu des tables 
+
+- CRUD 
+
+- Create => INSERT INTO 
+- Read   => SELECT 
+- Update => UPDATE 
+- Delete => DELETE 
+
+
+SELECT col , col , col 
+FROM nom_table
+
+SELECT col , LENGTH(col) , col AS `nouveau nom`
+FROM nom_table
+
+SELECT (CASE col WHEN 0 THEN "homme" ELSE "femme" END) AS `sexe`
+FROM nom_table
+
+SELECT col , col , col 
+FROM nom_table
+WHERE id = 1 ; 
+
+SELECT col , col , col 
+FROM nom_table
+WHERE id >= 1 ; 
+
+SELECT col , col , col 
+FROM nom_table
+WHERE id >= 1 AND id <= 10 ;
+
+SELECT col , col , col 
+FROM nom_table
+WHERE id = 1 OR id = 10 ;
+-- équivalent 
+SELECT col , col , col 
+FROM nom_table
+WHERE id IN( 1 , 10)  ;
+
+SELECT col , col , col 
+FROM nom_table
+WHERE dt_creation >= "2022-01-01" AND  dt_creation <= "2022-01-31" ;
+-- équivalent
+SELECT col , col , col 
+FROM nom_table
+WHERE dt_creation BETWEEN "2022-01-01" AND  "2022-01-31" ;
+
+-- rechercher un texte dans les valeurs stockées (TEXT VARCHAR MEDIUMTEXT BLOB) 
+dans la colonne titre 
+
+SELECT col , col , col 
+FROM nom_table
+WHERE titre LIKE "%text recherche%"
+
+SELECT 10 * 5 ; 
+
+------------------
+
+le coeur de la création des bases  de données 
+
+découper les données / les concepts à gérer en plusieurs table
+
+créer des liaisons entre les différentes tables 
+
+TABLE A              TABLE B
+clé primaire           clé secondaire  / clé étrangère 
+
+Formation                    Etudiant 
+1 Découverte HTML             1 Alain 1
+                              2 Bob   1
+
+CREATE TABLE formation(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom VARCHAR(200)
+)
+
+CREATE TABLE etudiant(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom VARCHAR(200),
+    formation_id INTEGER ,
+    FOREIGN KEY (formation_id) REFERENCES formation(id)
+)
+
+-- si l'information est stockée sur plusieurs tables 
+
+SELECT formation.nom , etudiant.nom 
+FROM formation
+JOIN etudiant
+ON formation.id = etudiant.formation_id
+
+
+SELECT formation.nom , etudiant.nom 
+FROM formation
+JOIN etudiant
+ON  etudiant.formation_id = formation.id
+
+SELECT formation.nom , etudiant.nom 
+FROM  etudiant
+JOIN  formation
+ON  etudiant.formation_id = formation.id
+WHERE etudiant.nom = "Bob"
+
+=> 
