@@ -48,3 +48,5 @@ CREATE TABLE exo1.reservation(
 =>  C:\xampp\mysql\bin\mysqldump.exe -u root -p exo1 > backup.sql
 
         binaire                     identifiant base > fichier-dump
+
+https://www.meetup.com/
