@@ -70,4 +70,6 @@ JOIN reservation
 ON reservation.id_salle = salle.id 
 JOIN client
 ON reservation.id_client = client.id 
-
+JOIN ville
+ON salle.id_ville = ville.id 
+WHERE ville.nom = "PARIS" AND salle.categorie = "reunion"
