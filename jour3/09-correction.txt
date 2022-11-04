@@ -1,4 +1,5 @@
 DROP DATABASE IF EXISTS exo1;
+
 CREATE DATABASE exo1 COLLATE utf8mb4_general_ci ;
 
 CREATE TABLE exo1.ville (
@@ -36,3 +37,14 @@ CREATE TABLE exo1.reservation(
     FOREIGN KEY (id_salle) REFERENCES salle(id),
     FOREIGN KEY (id_client) REFERENCES client(id)
 )  ENGINE=InnoDB ;
+
+
+=> SHOW CREATE TABLE nom_table ; 
+
+=> récupére l'intégralité de la structure d'une base de données 
+
+=> DUMP 
+
+=>  C:\xampp\mysql\bin\mysqldump.exe -u root -p exo1 > backup.sql
+
+        binaire                     identifiant base > fichier-dump
