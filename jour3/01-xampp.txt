@@ -36,9 +36,64 @@ CREATE TABLE `user`(
     prix_abonnement FLOAT(8,2)
 ) ENGINE = InnoDB;
 
+
+CREATE TABLE demo.`user`(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(100),
+    dt_creation DATETIME DEFAULT CURRENT_TIMESTAMP,
+    is_admin BOOLEAN ,
+    prix_abonnement FLOAT(8,2)
+) ENGINE = InnoDB;
+
+
 chiffre qui contient 8 caractères dont 2 chiffres sous la virgule
 
 InnoDB; => moteur de base de données xxxxx relation entre table
 le moteur par défaut lorsque l'on crée une base de données 
 
 MyIsam  => moteur de base de données ne permet pas de faire des relations entre les tables mais rapide pour rechercher 
+
+--
+
+créer une table reservation 
+clé primaire
+duree chiffre entier inférieur à 200
+dt_creation date et heure par défaut maintenant
+titre texte maximum de 255 caractères
+description 65 000 lettres 
+status vrai / faux 
+
+
+CREATE TABLE `demo`.`reservation` (
+        `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , 
+        `duree` TINYINT UNSIGNED NOT NULL DEFAULT '0' COMMENT 'duree en minutes' , `dt_creation` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , 
+        `titre` VARCHAR(200) NOT NULL COMMENT 'titre de la réservation' , 
+        `description` TEXT NOT NULL , 
+        `status` BOOLEAN NOT NULL , 
+        PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
+
+
+=> modifier la table 
+modifier le type de la colonne titre => TEXT 
+
+
+ALTER TABLE `demo`.`reservation` MODIFY titre TEXT ; 
+
+ajouter une colonne dans la table reservation 
+prix et de type float 8 caractères et 2 chiffres sous la virgule 
+
+ALTER TABLE `demo`.`reservation` ADD prix FLOAT(8,2) ; 
+
+supprimer une table 
+
+DROP TABLE `demo`.`reservation` ;
+
+voir la structure d'une table 
+
+SHOW CREATE TABLE `demo`.`reservation`
+
+
+--------------------
+--------------------
+--------------------
